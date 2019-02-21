@@ -1,0 +1,14 @@
+cur_lan : "fr"
+cur_en_or_ot: True
+input_dir: "/storage1/user/ss/tmoji_ori/final_data/" # modify to the path towards processed amazon review
+output_dir: "/storage1/user/ss/tmoji_ori/high_embedding/" 
+maxlen : 30 # maxlen will be 50 for jp, 30 for en, fr and de
+nb_classes : 64
+batch_size: 32
+load_embedding : True
+high : False
+upsample : False
+GPU_ID : '0'
+checkpoint_weight_path : '/storage1/user/bull/weights/tmoji-lstm-checkpoint-fr-1.hdf5'
+vocab_path : '/storage1/user/ss/tmoji_ori/data/'
+test: True

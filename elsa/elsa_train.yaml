@@ -1,0 +1,21 @@
+cur_lan : "en"
+maxlen : 30 # maxlen will be 50 for jp, 30 for en, fr and de
+batch_size : 250
+lr : 0.001
+epoch_size : 25000
+nb_epochs : 1000
+patience : 5
+nb_classes : 64
+embed_dim: 300
+LSTM_hidden : 512
+LSTM_dropout: 0.5
+final_dropout_rate : 0.5
+embed_dropout_rate : 0.0 
+load_embedding : True
+high : False
+upsample : False
+loss : 'categorical_crossentropy'
+GPU_ID : '0'
+checkpoint_weight_path : '/path/to_model'
+optim: 'adam'
+vocab_path : '/storage1/user/ss/tmoji_ori/data/'
