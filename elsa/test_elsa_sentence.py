@@ -132,6 +132,7 @@ if __name__ == '__main__':
     vocab_path = config['vocab_path']
     weight_path = config['checkpoint_weight_path']
     input_dir = config['input_dir']
+    output_dir = config['output_dir']
     cur_lan = config[ 'cur_lan' ]
     cur_test = "en_%s/" % cur_lan
 
