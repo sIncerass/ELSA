@@ -20,7 +20,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
   - Tweets sentiment/ contains the collected tweets sentimental dataset proposed in [Deriu, Jan, et al.][https://github.com/spinningbytes/deep-mlsa]. Each file use the same format of the review file except for they normally contain only one sentence in tweets. For english sentimenal tweets, we collected from semeval compition in 2015 and 2016. You can refer to our paper for the detailed split info. 
 - scripts/ contains the script for processing tweets, training word embedding and tidying emoji tweets into the numpy version for final ELSA model training.
   - process_raw_tweet/ simply modify `tweet_token.py` with `input_file, output_file, emoji_file` field to complete the tokenization, extraction emoji from tweets process. Set `JAPAN=True/False` in the `word_generator.py` file for preprocessing tweets in different languages. 
-    - process_pre_tweets/  contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each scripts and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence. 
+  - process_pre_tweets/  contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each scripts and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence. 
 - elsa/ contains the sentence level emoji prediction ELSA model and document level ELSA model. The configuration files are all in yaml.
 - pretrained/ contains the sentence representation, elsa sentence models and elsa document models for English, Japanese, French, and German. 
 
@@ -66,8 +66,6 @@ The code is tested on the *Linux* operating system.
 3. After detailed preprocessing of tweets and dataset decribed above, in order to train a new `sentence level` ELSA model, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
 
    Furthermore, to train a new `document level` ELSA model, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
-
-
 
 ## Dataset
 
