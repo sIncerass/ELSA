@@ -73,7 +73,8 @@ We sadly cannot release our large-scale dataset of Tweets used to train represen
 
 We upload all the benchmark datasets to this repository for convenience. As they were not collected and released by us, we do not claim any rights on them. If you use any of these datasets, please make sure you fulfill the licenses that they were released with and consider citing the original authors.
 
-###Citation
+### Citation
+
 Please consider citing the following paper when using our code or pretrained models for your application.
 
 ```
