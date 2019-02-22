@@ -80,7 +80,7 @@ We upload all the benchmark datasets to this repository for convenience. As they
 
 ### Visualization
 
-
+![Alt text](https://github.com/sIncerass/ELSA/raw/master/pics/neg_e.png)
 
 ### Citation
 
