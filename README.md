@@ -62,11 +62,12 @@ The code is tested on the *Linux* operating system.
    Then run `python elsa_doc.py`. You will have the results listing in the following format:
 
    `en_jp dvd Test Accuracy: 0.8045`
-   1. After detailed preprocessing of tweets and dataset decribed above, in order to train a new `sentence level` ELSA model, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
 
-      Furthermore, to train a new `document level` ELSA model, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
+3. After detailed preprocessing of tweets and dataset decribed above, in order to train a new `sentence level` ELSA model, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
 
-   
+   Furthermore, to train a new `document level` ELSA model, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
+
+
 
 ## Dataset
 
@@ -74,14 +75,7 @@ We sadly cannot release our large-scale dataset of Tweets used to train represen
 
 We upload all the benchmark datasets to this repository for convenience. As they were not collected and released by us, we do not claim any rights on them. If you use any of these datasets, please make sure you fulfill the licenses that they were released with and consider citing the original authors.
 
-<<<<<<< HEAD
 ###Citation
-=======
- 
-
-### Citation
->>>>>>> 3a49594dc234dce1ca0d0130764d949851372e1e
-
 Please consider citing the following paper when using our code or pretrained models for your application.
 
 ```
