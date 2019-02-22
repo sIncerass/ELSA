@@ -24,7 +24,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 - elsa/ contains the sentence level emoji prediction ELSA model and document level ELSA model. The configuration files are all in yaml.
 - pretrained/ contains the sentence representation, elsa sentence models and elsa document models for English, Japanese, French, and German. 
 
-##Setup
+## Setup
 
 1. We assume that you're using Python 3.6 with pip installed. As a backend you need to install either Theano (version 0.9+) or Tensorflow (version 1.3+). To run the code, you need the following dependencies:
 
@@ -68,13 +68,19 @@ The code is tested on the *Linux* operating system.
 
    
 
-##Dataset
+## Dataset
 
 We sadly cannot release our large-scale dataset of Tweets used to train representation learning models due to licensing restrictions.
 
 We upload all the benchmark datasets to this repository for convenience. As they were not collected and released by us, we do not claim any rights on them. If you use any of these datasets, please make sure you fulfill the licenses that they were released with and consider citing the original authors.
 
+<<<<<<< HEAD
 ###Citation
+=======
+ 
+
+### Citation
+>>>>>>> 3a49594dc234dce1ca0d0130764d949851372e1e
 
 Please consider citing the following paper when using our code or pretrained models for your application.
 
