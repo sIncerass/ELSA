@@ -32,7 +32,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 - [gensim](https://github.com/RaRe-Technologies/gensim)
 - [text-unidecode](https://github.com/kmike/text-unidecode)
 - [Mecab](http://taku910.github.io/mecab/) tokenize Japanese.
-- [yaml][https://github.com/yaml]
+- [yaml](https://github.com/yaml)
 
 You can use the python package manager of your choice (*pip/conda*) to install the dependencies.
 The code is tested on the *Linux* operating system. 
