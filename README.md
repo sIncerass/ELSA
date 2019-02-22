@@ -12,8 +12,6 @@ The workflow of ELSA consists of the following phases:
 
 You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification**” for more details.
 
- 
-
 ##Overview
 
 - dataset/ contains the raw and processed data used for training and testing our approach. It contains two subfolders: 
@@ -55,7 +53,7 @@ Please consider citing the following paper when using our code or pretrained mod
 
 ```
 @inproceedings{chenshen2019,
-  title={ Emoji-powered representation learning for cross-lingual sentiment classification},
+  title={Emoji-powered representation learning for cross-lingual sentiment classification},
   author={Zhenpeng Chen and Sheng Shen and Ziniu Hu and Xuan Lu and Qiaozhu Mei and Xuanzhe Liu},
   booktitle={Proceedings of the 2019 World Wide Web Conference on World Wide Web, {WWW} 2019},
   year={2019}
