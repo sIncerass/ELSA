@@ -1,7 +1,7 @@
 train_chose: True # use en_train or en_test for training
 GPU_ID: '0'
 weight_path: "/storage1/user/ss/tmoji_tmp/weights_t_att.hdf5" # path to store the model weight
-pretrain_path: "/storage1/user/ss/tmoji_tmp/weights_t_att.hdf5" # for testing, load the pretrained model
+pretrain_path: "/storage1/user/ss/tmoji_tmp/" # for testing, load the pretrained model
 embed_path: "/storage1/user/bull/tmoji_embedding/"
 label_path: "/home/shensheng/nlp/try_data/data/" # path to the preprocessed amazon review dir
 cur_test: "en_jp/" # choose one language from ["en_jp/", "en_fr/", "en_de/"]

@@ -84,7 +84,7 @@ if __name__ == '__main__':
         test_y = labes['en_test_review'] if test_chose else labes['en_train_review']
         elsa_doc.fit([tmp_x[0], tmp_x[1]], tmp_y, batch_size=batch_size, epochs=epochs, validation_data=([test_x[0], test_x[1]], test_y), verbose=True, callbacks=[ck])
     else:
-        pretrained_path = config['pretrain_path']
+        pretrained_path = config['pretrain_path'] + cur_test + cur_cat[1:] + "_weights_t_att.hdf5"
         elsa_doc.load_weights(filepath=pretrained_path)
         test_x = elsa_embedding[cur_test[-3:-1:]+'_test_review']
         test_y = labes[cur_test[-3:-1:]+'_test_review']
