@@ -12,7 +12,7 @@ The workflow of ELSA consists of the following phases:
 
 You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification**” for more details.
 
-##Overview
+## Overview
 
 - dataset/ contains the raw and processed data used for training and testing our approach. It contains two subfolders: 
   - Amazon review/ contains the processed amazon review dataset created by [Pretten-
@@ -23,7 +23,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 - elsa/ contains 
 - pretrained/ contains the sentence representation, elsa sentence models and elsa document models for English, Japanese, French, and German. 
 
-##Setup
+## Setup
 
 1. We assume that you're using Python 3.6 with pip installed. As a backend you need to install either Theano (version 0.9+) or Tensorflow (version 1.3+). To run the code, you need the following dependencies:
 
@@ -39,7 +39,7 @@ The code is tested on the *Linux* operating system.
 
    
 
-##Dataset
+## Dataset
 
 We sadly cannot release our large-scale dataset of Tweets used to train representation learning models due to licensing restrictions.
 
@@ -47,7 +47,7 @@ We upload all the benchmark datasets to this repository for convenience. As they
 
  
 
-###Citation
+### Citation
 
 Please consider citing the following paper when using our code or pretrained models for your application.
 
