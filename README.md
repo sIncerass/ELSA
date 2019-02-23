@@ -17,17 +17,18 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 - dataset/ 
   contains the raw and processed data used for training and testing our approach. It contains two subfolders: 
   - Amazon review/ 
-    contains the processed amazon review dataset created by [Pretten-hofer and Stein et al.](http://www.aclweb.org/anthology/P10-1114). Aside from the given parallel reviews for Japanese, French and German to English, we translate English training and testing reviews to other languages through [Google Translate](https://translate.google.com). Each line of the dataset file is composed of `sentiment label \t english version \t other language version`, please use json to load the according text of each review (they are already processed into list of words).
-  - Tweets sentiment/ 
-    contains the collected tweets sentimental dataset proposed in [Deriu, Jan, et al.](https://github.com/spinningbytes/deep-mlsa). Each file use the same format of the review file except for they normally contain only one sentence in tweets. For english sentimenal tweets, we collected from semeval compition in 2015 and 2016. You can refer to our paper for the detailed split info. 
+    contains the processed amazon review dataset created by [Pretten-hofer and Stein et al.](http://www.aclweb.org/anthology/P10-1114). Aside from the given parallel texts of the test data (i.e., the Japanese, French and German reviews), we translate English training and testing reviews to other languages through [Google Translate](https://translate.google.com). Each line of the dataset file is composed of `sentiment label \t english version \t other language version`, please use the json to parse each review (`./en_de/de/books_train_review.tsv`, they have already been processed into list of words)
 - scripts/ 
   contains the script for processing tweets, training word embedding and tidying emoji tweets into the numpy version for final ELSA model training.
-  - process_raw_tweet/ simply modify `tweet_token.py` with `input_file, output_file, emoji_file` field to complete the tokenization, extraction emoji from tweets process. Set `JAPAN=True/False` in the `word_generator.py` file for preprocessing tweets in different languages. 
-  - process_pre_tweets/  contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each scripts and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence. 
+  - process_raw_tweet/ contains the scripts of tokenizing and extracting emojis from Tweets. You can  modify `tweet_token.py` with `input_file, output_file, emoji_file` field for different tasks. Set `JAPAN=True/False` in the `word_generator.py` file for preprocessing tweets in different languages. 
+  - process_pre_tweets/  contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each scripts and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence to learn the word embeddings and tidy the Tweets into the format of model input. 
 - elsa/ 
-  contains the sentence level emoji prediction ELSA model and document level ELSA model. The configuration files are all in yaml.
-- pretrained/ 
-  contains the sentence representation, elsa sentence models and elsa document models for English, Japanese, French, and German. 
+  contains the core scripts (`.py` files) and configuration files (`.yaml` files) of ELSA and you can turn to the detailed instructions in the following Setup to run ELSA. The core scripts include:
+  - elsa_sentence.py : train a new version of sentence representation of ELSA from processed Tweets.
+  - test_elsa_sentence.py : generate sentence representation for amazon review dataset in respective language setting.
+  - elsa_doc.py : the final sentiment classifier of ELSA.
+- pretrained_model/ 
+  contains the pre_trained models in this study, including the representation models (i.e., `working in process`) and the final sentiment classifier (i.e., `working in process`).
 
 ## Setup
 
@@ -42,7 +43,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 You can use the python package manager of your choice (*pip/conda*) to install the dependencies.
 The code is tested on the *Linux* operating system. 
 
-2. To reproduce our main results, for `sentence level` ELSA model, you can change the configuration file `elsa_test.yaml` by setting the
+2. To reproduce our main results, for the representation learning phase of ELSA, you can change the configuration file `elsa_test.yaml` by setting the
 
    ``````
    cur_lan: "fr" or "jp" or "de"
@@ -68,9 +69,9 @@ The code is tested on the *Linux* operating system.
 
    `en_jp dvd Test Accuracy: 0.8045`
 
-3. After detailed preprocessing of tweets and dataset decribed above, in order to train a new `sentence level` ELSA model, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
+3. After detailed preprocessing of tweets and dataset decribed above, in order to train a new sentence representation of ELSA, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
 
-   Furthermore, to train a new `document level` ELSA model, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
+   Furthermore, to train a new final sentiment classifier, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
 
 ## Dataset
 
@@ -90,7 +91,7 @@ Please consider citing the following paper when using our code or pretrained mod
 @inproceedings{chenshen2019,
   title={Emoji-powered representation learning for cross-lingual sentiment classification},
   author={Zhenpeng Chen and Sheng Shen and Ziniu Hu and Xuan Lu and Qiaozhu Mei and Xuanzhe Liu},
-  booktitle={Proceedings of the 2019 World Wide Web Conference on World Wide Web, {WWW} 2019},
+  booktitle={Proceedings of the 2019 World Wide Web Conference},
   year={2019}
 }
 ```
