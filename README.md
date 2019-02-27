@@ -15,20 +15,20 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
 ## Overview
 
 - dataset/ 
-  contains the raw and processed data used for training and testing our approach. It contains two subfolders: 
+  contains the raw and processed data used for evaluating our approach. It contains two subfolders: 
   - Amazon review/ 
-    contains the processed amazon review dataset created by [Prettenhofer and Stein et al.](http://www.aclweb.org/anthology/P10-1114). Aside from the given parallel texts of the test data (i.e., the Japanese, French and German reviews), we translate English training and testing reviews to other languages through [Google Translate](https://translate.google.com). Each line of the dataset file is composed of `sentiment label \t english version \t other language version`, please use the json to parse each review (`./en_de/de/books_train_review.tsv`, they have already been processed into list of words)
+    contains the pre-processed Amazon review dataset created by [Prettenhofer and Stein](http://www.aclweb.org/anthology/P10-1114). Aside from the given parallel texts of the test data (i.e., the Japanese, French and German reviews), we translate English reviews into Japanese, French, and German through [Google Translate](https://translate.google.com). Each line of these included files is composed of `sentiment label \t english version \t other language version`, please use the json files to parse each review (such as `./en_de/de/books_train_review.tsv`, they have already been processed into list of words)
 - scripts/ 
-  contains the script for processing tweets, training word embedding and tidying emoji tweets into the numpy version for final ELSA model training.
-  - process_raw_tweet/ contains the scripts of tokenizing and extracting emojis from Tweets. You can  modify `tweet_token.py` with `input_file, output_file, emoji_file` field for different tasks. Set `JAPAN=True/False` in the `word_generator.py` file for preprocessing tweets in different languages. 
-  - process_pre_tweets/  contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each script and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence to learn the word embeddings and tidy the Tweets into the format of model input. 
+  contains the scripts for pre-processing Tweets and training word embeddings.
+  - process_raw_tweet/ contains the scripts of tokenizing and extracting emojis from Tweets. You can modify `tweet_token.py` with `input_file, output_file, emoji_file` field for different tasks. Set `JAPAN=True/False` in the `word_generator.py` file for pre-processing Tweets when dealing with different languages.
+  - process_pre_tweets/ contains the vocabulary file that can be generated through scripts in `process_raw_tweet/ `. Please change the filename and path name in each script and run `tidy_wordvec.py, tidy_vocab.py, tidy_tweet_elsa.py` in sequence to learn the word embeddings and tidy the Tweets into the format of model input. 
 - elsa/ 
   contains the core scripts (`.py` files) and configuration files (`.yaml` files) of ELSA and you can turn to the detailed instructions in the following Setup to run ELSA. The core scripts include:
-  - elsa_sentence.py : train a new version of sentence representation of ELSA from processed Tweets.
-  - test_elsa_sentence.py : generate sentence representation for amazon review dataset in respective language setting.
-  - elsa_doc.py : the final sentiment classifier of ELSA.
+  - elsa_sentence.py : train a new version of sentence representation model of ELSA from pre-processed Tweets.
+  - test_elsa_sentence.py : generate sentence representations for Amazon review dataset in respective language setting.
+  - elsa_doc.py : train the final sentiment classifier of ELSA.
 - pretrained_model/ 
-  contains the pre_trained models in this study, including the representation models (i.e., `working in process`) and the final sentiment classifier (i.e., `working in process`).
+  contains contains  the pre_trained models in this study, including the representation models (Download link: *****) and the final sentiment classifier (i.e., .hdf5 files).
 
 ## Setup
 
@@ -69,9 +69,9 @@ The code is tested on the *Linux* operating system.
 
    `en_jp dvd Test Accuracy: 0.8045`
 
-3. After detailed preprocessing of tweets and dataset decribed above, in order to train a new sentence representation of ELSA, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
+3. After detailed pre-processing of Tweets and dataset decribed above, in order to train a new representation model of ELSA, you can run the scripts in the elsa/ directory and change the `elsa_train.yaml` as you please. 
 
-   Furthermore, to train a new final sentiment classifier, after collecting the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and finetune your own model accordingly.
+   Furthermore, to train a new final sentiment classifier, after obtaining the sentence representation for each sentence in the docuement, you can modify the `mode: 'train'`in `elsa_doc.yaml` file and fine-tune your own model accordingly.
 
 ## Dataset
 
@@ -95,6 +95,3 @@ Please consider citing the following paper when using our code or pretrained mod
   year={2019}
 }
 ```
-
- 
-
