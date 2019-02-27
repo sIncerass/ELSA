@@ -28,7 +28,7 @@ You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered R
   - test_elsa_sentence.py : generate sentence representations for Amazon review dataset in respective language setting.
   - elsa_doc.py : train the final sentiment classifier of ELSA.
 - pretrained_model/ 
-  contains contains  the pre_trained models in this study, including the representation models (Download link: *****) and the final sentiment classifier (i.e., .hdf5 files).
+  contains contains  the pre_trained models in this study, including the representation models (Download link: https://drive.google.com/drive/folders/13dQdhLl3ZZogM3B1AV_xpI8dGe_wPY3K?usp=sharing) and the final sentiment classifier (i.e., en_de/books_weights_t_att.hdf5 files).
 
 ## Setup
 
