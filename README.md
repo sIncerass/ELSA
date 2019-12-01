@@ -10,7 +10,7 @@ The workflow of ELSA consists of the following phases:
 
 3. It translates the labeled English data into the target language through an off-the-shelf machine translation system, represent the pseudo parallel texts with the pre-trained language-specific models, and use an attention model to train the final sentiment classifier.
 
-You can see the WWW 2019 (know as The Web Conference) paper “**Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification**” for more details.
+You can see the WWW 2019 (known as The Web Conference) paper “**Emoji-Powered Representation Learning for Cross-Lingual Sentiment Classification**” for more details.
 
 ## Overview
 
@@ -90,7 +90,7 @@ Please consider citing the following paper when using our code or pretrained mod
 ```
 @inproceedings{chenshen2019,
   title={Emoji-powered representation learning for cross-lingual sentiment classification},
-  author={Zhenpeng Chen and Sheng Shen and Ziniu Hu and Xuan Lu and Qiaozhu Mei and Xuanzhe Liu},
+  author={Zhenpeng Chen* and Sheng Shen* and Ziniu Hu and Xuan Lu and Qiaozhu Mei and Xuanzhe Liu},
   booktitle={Proceedings of the 2019 World Wide Web Conference},
   year={2019}
 }
